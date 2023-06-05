@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="92ff51d9585e4b79a43dff45d43eae2b" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="ClothingStoreModel.BonusCard" Width="1.5" PointX="7.5" PointY="16.125" />
+        <EntityTypeShape EntityType="ClothingStoreModel.Cart" Width="1.5" PointX="7.5" PointY="13" />
+        <EntityTypeShape EntityType="ClothingStoreModel.CategoryItem" Width="1.5" PointX="0.75" PointY="7.25" />
+        <EntityTypeShape EntityType="ClothingStoreModel.Check" Width="1.5" PointX="15" PointY="10.75" />
+        <EntityTypeShape EntityType="ClothingStoreModel.ColorItem" Width="1.5" PointX="5.25" PointY="9.125" />
+        <EntityTypeShape EntityType="ClothingStoreModel.CurrentItem" Width="1.5" PointX="7.5" PointY="6.25" />
+        <EntityTypeShape EntityType="ClothingStoreModel.CurrentItemCart" Width="1.5" PointX="9.75" PointY="7" />
+        <EntityTypeShape EntityType="ClothingStoreModel.CurrentItemStore" Width="1.5" PointX="9.75" PointY="4" />
+        <EntityTypeShape EntityType="ClothingStoreModel.Customer" Width="1.5" PointX="5.25" PointY="12.125" />
+        <EntityTypeShape EntityType="ClothingStoreModel.CustomerGroup" Width="1.5" PointX="3" PointY="3" />
+        <EntityTypeShape EntityType="ClothingStoreModel.Employee" Width="1.5" PointX="12.75" PointY="6.875" />
+        <EntityTypeShape EntityType="ClothingStoreModel.Gender" Width="1.5" PointX="3" PointY="13.125" />
+        <EntityTypeShape EntityType="ClothingStoreModel.GeneralItem" Width="1.5" PointX="5.25" PointY="5.5" />
+        <EntityTypeShape EntityType="ClothingStoreModel.History" Width="1.5" PointX="9.75" PointY="10" />
+        <EntityTypeShape EntityType="ClothingStoreModel.Passport" Width="1.5" PointX="15" PointY="7.875" />
+        <EntityTypeShape EntityType="ClothingStoreModel.PhotoItem" Width="1.5" PointX="9.75" PointY="15.25" />
+        <EntityTypeShape EntityType="ClothingStoreModel.Role" Width="1.5" PointX="10.5" PointY="1.125" />
+        <EntityTypeShape EntityType="ClothingStoreModel.SizeItem" Width="1.5" PointX="3" PointY="8.5" />
+        <EntityTypeShape EntityType="ClothingStoreModel.Store" Width="1.5" PointX="7.5" PointY="3" />
+        <EntityTypeShape EntityType="ClothingStoreModel.sysdiagrams" Width="1.5" PointX="11.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ClothingStoreModel.TypeСlothes" Width="1.5" PointX="3" PointY="5.75" />
+        <AssociationConnector Association="ClothingStoreModel.FK_BonusCard_Customer" />
+        <AssociationConnector Association="ClothingStoreModel.FK_Cart_Customer" />
+        <AssociationConnector Association="ClothingStoreModel.FK_Check_Cart" />
+        <AssociationConnector Association="ClothingStoreModel.FK_CurrentItemCart_Cart" />
+        <AssociationConnector Association="ClothingStoreModel.FK_Size_Category" />
+        <AssociationConnector Association="ClothingStoreModel.FK_Type_Category" />
+        <AssociationConnector Association="ClothingStoreModel.FK_Check_Employee" />
+        <AssociationConnector Association="ClothingStoreModel.FK_CurrentItem_Color" />
+        <AssociationConnector Association="ClothingStoreModel.FK_CurrentItem_GeneralItem" />
+        <AssociationConnector Association="ClothingStoreModel.FK_CurrentItem_Size" />
+        <AssociationConnector Association="ClothingStoreModel.FK_CurrentItemCart_CurrentItem" />
+        <AssociationConnector Association="ClothingStoreModel.FK_CurrentItemStore_CurrentItem" />
+        <AssociationConnector Association="ClothingStoreModel.FK_Photo_CurrentItem" />
+        <AssociationConnector Association="ClothingStoreModel.FK_CurrentItemStore_Store" />
+        <AssociationConnector Association="ClothingStoreModel.FK_Customer_Gender" />
+        <AssociationConnector Association="ClothingStoreModel.FK_History_Customer" />
+        <AssociationConnector Association="ClothingStoreModel.FK_Item_CustomerGroup" />
+        <AssociationConnector Association="ClothingStoreModel.FK_Employee_Gender" />
+        <AssociationConnector Association="ClothingStoreModel.FK_Employee_Role" />
+        <AssociationConnector Association="ClothingStoreModel.FK_Employee_Store1" />
+        <AssociationConnector Association="ClothingStoreModel.FK_Passport_Employee" />
+        <AssociationConnector Association="ClothingStoreModel.FK_Item_Type" />
+        <AssociationConnector Association="ClothingStoreModel.HistoryCurrentItem" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

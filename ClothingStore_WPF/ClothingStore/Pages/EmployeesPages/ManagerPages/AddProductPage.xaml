@@ -1,0 +1,155 @@
+﻿<Page x:Class="ClothingStore.Pages.EmployeesPages.ManagerPages.AddProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClothingStore.Pages.EmployeesPages.ManagerPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="840" d:DesignWidth="800"
+      xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      Title="AddProductPage">
+
+    <Grid Background="WhiteSmoke">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+          
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.RowSpan="4">
+        <Expander  Width="120" Grid.Row="0"  FontSize="20">
+            <Expander.Header>
+                <TextBlock x:Name="tb_CustomersGroups" Text="">
+
+                </TextBlock>
+            </Expander.Header>
+            <Expander.Content>
+                <ListBox  Background="Transparent" ItemContainerStyle="{StaticResource itemstyle}" HorizontalContentAlignment="Stretch" x:Name="lv_CustomersGroups" SelectionMode="Multiple">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox x:Name="cb_CustomerGroup" Unchecked="checkBox_Checked" Checked="checkBox_Checked" IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" Content="{Binding GruopTitle}"></CheckBox>
+                                </StackPanel>
+                            </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Expander.Content>
+        </Expander>
+
+            <Expander  Width="130" Grid.Row="1"  FontSize="20">
+                <Expander.Header>
+                    <TextBlock x:Name="tb_Category" Text="">
+
+                    </TextBlock>
+                </Expander.Header>
+                <Expander.Content>
+                    <ListBox  Background="Transparent" ItemContainerStyle="{StaticResource itemstyle}" HorizontalContentAlignment="Stretch" x:Name="lv_Category" SelectionMode="Multiple">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox x:Name="cb_Category" Unchecked="checkBox_Checked" Checked="checkBox_Checked" IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" Content="{Binding CategoryTitle}"></CheckBox>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Expander.Content>
+            </Expander>
+
+            <Expander  Width="150" Grid.Row="1"  FontSize="20">
+                <Expander.Header>
+                    <TextBlock x:Name="tb_TypeСlothes" Text="">
+
+                    </TextBlock>
+                </Expander.Header>
+                <Expander.Content>
+                    <ListBox  Background="Transparent" ItemContainerStyle="{StaticResource itemstyle}" HorizontalContentAlignment="Stretch" x:Name="lv_TypeСlothes" SelectionMode="Multiple">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox x:Name="cb_TypeСlothes" Unchecked="checkBox_Checked" Checked="checkBox_Checked" IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" Content="{Binding TypeTitle}"></CheckBox>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Expander.Content>
+            </Expander>
+
+            <Expander  Width="150" Grid.Row="1"  FontSize="20">
+                <Expander.Header>
+                    <TextBlock x:Name="tb_Size" Text="">
+
+                    </TextBlock>
+                </Expander.Header>
+                <Expander.Content>
+                    <ListBox  Background="Transparent" ItemContainerStyle="{StaticResource itemstyle}" HorizontalContentAlignment="Stretch" x:Name="lv_Size" SelectionMode="Multiple">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox x:Name="cb_Size" Unchecked="checkBox_Checked" Checked="checkBox_Checked" IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" Content="{Binding SizeTitle}"></CheckBox>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Expander.Content>
+            </Expander>
+
+            <Expander  Width="150" Grid.Row="1"  FontSize="20" Background="WhiteSmoke">
+                <Expander.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <ListBox Background="Transparent" x:Name="lv_Header"  IsHitTestVisible="False" BorderBrush="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Disabled"  BorderThickness="0"  ItemsSource="{Binding ElementName=lv_Color,Path=SelectedItems}" >
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel  Orientation="Horizontal"></WrapPanel>
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Rectangle Fill="{Binding ColorTitle}" Width="16" Height="16" Margin="0,2,5,2" />
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <TextBlock x:Name="tb_CountColor"/>
+                    </StackPanel>
+                </Expander.Header>
+                <Expander.Content>
+                    <ListBox  Background="Transparent" ItemContainerStyle="{StaticResource itemstyle}" HorizontalContentAlignment="Stretch" x:Name="lv_Color" SelectionMode="Multiple">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox x:Name="cb_Color" Checked="checkBox_Checked" Unchecked="checkBox_Checked"  IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" Content="{Binding ColorTitle}"></CheckBox>
+
+                                </StackPanel>
+
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Expander.Content>
+            </Expander>
+
+
+
+
+
+
+        </StackPanel>
+
+        <Button 
+            Grid.Row="2" 
+            Grid.Column="2" 
+            Style="{StaticResource ButtonStyle}" 
+            x:Name="btn_AddProduct" 
+            Click="btn_AddProduct_Click"/>
+    </Grid>
+</Page>

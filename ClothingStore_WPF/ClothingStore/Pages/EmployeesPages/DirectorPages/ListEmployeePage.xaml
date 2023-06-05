@@ -1,0 +1,72 @@
+﻿<Page x:Class="ClothingStore.Pages.EmployeesPages.DirectorPages.ListEmployeePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClothingStore.Pages.EmployeesPages.DirectorPages"
+      mc:Ignorable="d" 
+       d:DesignHeight="840" d:DesignWidth="800"
+      Title="ListEmployeePage">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Text="Список сотрудников"
+            Grid.ColumnSpan="3"
+            FontSize="20"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            />
+
+        <Button
+                Grid.Row="0"
+                HorizontalAlignment="Left"
+                Height="30"
+                VerticalAlignment="Center"
+                Width="30"
+                Margin="15 0 0 0"
+                Foreground="White"
+                Background="White"
+                BorderBrush="White"
+                x:Name="bt_Back"
+                Click="bt_Back_Click"
+                Style="{StaticResource ButtonStyle}"
+                >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="\Res\Images\btnBack.png"/>
+            </StackPanel>
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+
+        </Button>
+
+
+        <ListView x:Name="lv_Employee" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="3">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Код" Width="30" DisplayMemberBinding="{Binding EmployeeID}"/>
+                    <GridViewColumn Header="Фамилия" Width="150" DisplayMemberBinding="{Binding FName}"/>
+                    <GridViewColumn Header="Имя" Width="100" DisplayMemberBinding="{Binding MName}"/>
+                    <GridViewColumn Header="Пол" Width="100" DisplayMemberBinding="{Binding Gender.GenTitle}"/>
+                    <GridViewColumn Header="Почта" Width="150" DisplayMemberBinding="{Binding Email}"/>
+                    <GridViewColumn Header="Телефон" Width="150" DisplayMemberBinding="{Binding Phone}"/>
+                    <GridViewColumn Header="Должность" Width="100" DisplayMemberBinding="{Binding Role.RoleTitle}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

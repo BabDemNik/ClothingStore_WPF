@@ -1,0 +1,228 @@
+﻿<Page x:Class="ClothingStore.Pages.PublicPages.AuthorizationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClothingStore.Pages.PublicPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="850"
+      MaxWidth="700"
+      MinHeight="700"
+      Title="AuthorizationPage"
+      
+      >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Width="450" Height="550"  Grid.Column="1" Grid.RowSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border
+                Grid.Row="0"
+                Grid.RowSpan="10"
+                Grid.Column="0"
+                Grid.ColumnSpan="4"
+                Background="WhiteSmoke"
+                BorderBrush="Black"
+                BorderThickness="2"
+                CornerRadius="20"
+                
+                
+                />
+
+            <TextBox
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="4"
+                Style="{StaticResource tbStyle}"
+                x:Name="tb_PhoneOrEmail"
+                TextChanged="tb_PhoneOrEmail_TextChanged"
+                Width="350"
+                VerticalAlignment="Bottom"
+                LostFocus="tb_PhoneOrEmail_LostFocus"
+                GotFocus="tb_PhoneOrEmail_GotFocus"
+                Text="Введи почту/телефон"
+                Foreground="Gray"
+                Height="40"
+                Padding="1"
+                />
+
+            <TextBlock
+            x:Name="tb_ER_Login"
+            Grid.Row="2"
+            Grid.ColumnSpan="4"
+            Text="*Не правильно заполнены Почта/Телефон"
+            FontSize="15"
+            Margin="0 0 0 7"
+            Visibility="Collapsed"
+            HorizontalAlignment="Center"
+            Foreground="Red"
+            VerticalAlignment="Top"
+            />
+
+            <PasswordBox
+                Grid.ColumnSpan="4"
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Padding="1"
+                Height="40"
+                Width="350"     
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Style="{StaticResource psStyle}"
+                Foreground="Gray"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Left"
+                PasswordChanged="tb_Passwordbox_PasswordChanged"
+                LostFocus="tb_Passwordbox_LostFocus"
+                x:Name="tb_Passwordbox"
+                Template="{StaticResource passwordbox}"
+                />
+           
+            <TextBox
+                Grid.ColumnSpan="4"                                
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Width="350"
+                Height="40"
+                Padding="1"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Style="{StaticResource tbStyle}"
+                x:Name="tbVisiblePasswordbox"
+                Foreground="Gray"
+                GotFocus="tbVisiblePasswordbox_GotFocus"
+                TextChanged="tbVisiblePasswordbox_TextChanged"
+                Text="Введи пароль"
+                />
+            <TextBlock
+            x:Name="tb_ER_Pass"
+            Grid.Row="3"
+            Grid.ColumnSpan="4"
+            Text="*Не правильно заполнен Пароль"
+            FontSize="15"
+            Margin="0 0 0 7"
+            Visibility="Collapsed"
+            HorizontalAlignment="Center"
+            Foreground="Red"
+            VerticalAlignment="Center"
+            />
+
+            <TextBlock
+                FontSize="30"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                >Вход в аккаунт</TextBlock>
+
+            
+           
+
+            <Button
+                x:Name="bt_Enter"
+                Grid.Row="4"
+                
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                Height="40"
+                Width="100"
+                Content="Войти"
+                Click="bt_Enter_Click"
+                Style="{StaticResource ButtonStyle}"
+                FontSize="20"
+                >
+                
+
+            </Button>
+
+            <Button
+                x:Name="bt_Reg"
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="4"
+                Style="{StaticResource ButtonStyle}"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Center"
+                Height="40"
+                Width="150"
+                Content="Регистрация"
+                Click="bt_Reg_Click"
+                FontSize="20"
+                />
+
+            <TextBlock 
+                Text="Еще нет аккаунта?" 
+                FontSize="20" 
+                Grid.Row="5" 
+                Width="170"
+                Grid.ColumnSpan="4" 
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center" 
+                Foreground="DarkGray"
+                />
+
+
+            <Button
+                Grid.Row="0"
+                HorizontalAlignment="Left"
+                Height="30"
+                VerticalAlignment="Center"
+                Width="30"
+                Margin="20 0 0 0"
+                Foreground="White"
+                Background="White"
+                BorderBrush="White"
+                x:Name="bt_Close"
+                Click="bt_Close_Click"
+                Style="{StaticResource ButtonStyle}"
+                
+                >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="\Res\Images\btnClose.png"/>
+                </StackPanel>
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Button.Resources>
+
+            </Button>
+
+
+
+
+        </Grid>
+
+      
+
+    </Grid>
+</Page>

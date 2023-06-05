@@ -1,0 +1,392 @@
+﻿<Page x:Class="ClothingStore.Pages.PublicPages.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClothingStore.Pages.PublicPages"
+      mc:Ignorable="d" 
+      xmlns:Icon ="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      d:DesignHeight="800" d:DesignWidth="850"
+      MaxWidth="700"
+      MinHeight="700"
+      Title="RegistrationPage">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid Grid.Row="1" Grid.Column="1"  Width="562" Height="650" >
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+             
+            </Grid.RowDefinitions>
+
+            <Border
+                Grid.RowSpan="15"
+                Grid.ColumnSpan="3"
+                CornerRadius="20"
+                Background="WhiteSmoke"
+                BorderBrush="Black"
+                BorderThickness="2"
+                />
+
+            <TextBlock
+                FontSize="30"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Center"
+                Grid.ColumnSpan="2"
+                Margin="0 10 0 0"
+                >Регистрация</TextBlock>
+
+            <TextBox
+                x:Name="tbFirstName"
+                TextChanged="CheckErrors"
+                Grid.ColumnSpan="2"                                
+                Grid.Row="1" 
+                Width="416"
+                Height="35"
+                Style="{StaticResource tbStyle}"
+                Text="Имя"
+              
+                LostFocus="LostFocusText"
+                GotFocus="GotFocusText"
+                Foreground="Gray"
+                />
+            <TextBlock
+            x:Name="tb_ER_FName"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Text="*Не правильно заполнено Имя"
+            FontSize="15"
+            Margin="0 0 0 7"
+            Visibility="Collapsed"
+            HorizontalAlignment="Center"
+            Foreground="Red"
+            VerticalAlignment="Bottom"
+            />
+
+            <TextBox
+                Width="416"
+                Height="35"
+                Grid.ColumnSpan="2"                                
+                Grid.Row="2" 
+                x:Name="tbLastName"
+                LostFocus="LostFocusText"
+                GotFocus="GotFocusText"
+                Style="{StaticResource tbStyle}"
+                Text="Фамилия"
+                TextChanged="CheckErrors"
+                Foreground="Gray"
+                />
+            <TextBlock
+            x:Name="tb_ER_LName"
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            Text="*Не правильно заполнена Фамилия"
+            FontSize="15"
+            Margin="0 0 0 7"
+           Visibility="Collapsed"
+            HorizontalAlignment="Center"
+            Foreground="Red"
+            VerticalAlignment="Bottom"
+            />
+
+            <TextBox
+                Width="416"
+                Height="35"
+                x:Name="tbPatronymic"
+                Grid.ColumnSpan="2"                                
+                Grid.Row="3"                                
+                Style="{StaticResource tbStyle}"
+                Text="Отчество"
+                Foreground="Gray"
+                LostFocus="LostFocusText"
+                GotFocus="GotFocusText"
+                />
+
+            <TextBlock
+            x:Name="tb_ER_PName"
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            Text="*Не правильно заполнено Отчество"
+            FontSize="15"
+            Margin="0 0 0 7"
+           Visibility="Collapsed"
+            HorizontalAlignment="Center"
+            Foreground="Red"
+            VerticalAlignment="Bottom"
+            />
+
+            <TextBox
+                Width="416"
+                Height="35"
+                x:Name="tbPhone"
+                GotFocus="GotFocusText"
+                LostFocus="LostFocusText"
+                Grid.ColumnSpan="2"                                
+                Grid.Row="4"                                
+                Style="{StaticResource tbStyle}"
+                Text="Телефон"
+                TextChanged="tbPhone_TextChanged"
+              
+                Foreground="Gray"
+                />
+            <TextBlock
+            x:Name="tb_ER_Phone"
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            Text="*Не правильно заполнен Телефон"
+            FontSize="15"
+            Margin="0 0 0 7"
+           Visibility="Collapsed"
+            HorizontalAlignment="Center"
+            Foreground="Red"
+            VerticalAlignment="Bottom"
+            />
+
+            <TextBox
+                Width="416"
+                Height="35"
+                x:Name="tbEmail"
+                LostFocus="LostFocusText"
+                GotFocus="GotFocusText"
+                Grid.ColumnSpan="2"                                
+                Grid.Row="5"                                
+                Style="{StaticResource tbStyle}"
+                Text="Email"
+                Foreground="Gray" 
+                TextChanged="tbEmail_TextChanged"
+                
+                />
+            <TextBlock
+            x:Name="tb_ER_Email"
+            Grid.Row="5"
+            Grid.ColumnSpan="2"
+            Text="*Не правильно заполнена  почта"
+            FontSize="15"
+            Margin="0 0 0 7"
+            Visibility="Collapsed"
+            HorizontalAlignment="Center"
+            Foreground="Red"
+            VerticalAlignment="Bottom"
+            />
+
+             
+
+
+           <!---->
+
+            <DatePicker
+                Style="{DynamicResource DatePickerStyle}"
+                Grid.Row="6" 
+                Grid.Column="0"
+                Height="35"
+                x:Name="dpDate"
+                Width="190"
+                Margin="55 0 0 0"
+                FontSize="22"
+                VerticalAlignment="Top"
+                Foreground="Black"        
+                        />
+            <TextBlock
+            x:Name="tb_ER_Bitrhday"
+            Grid.Row="6"
+            Grid.Column="0"
+            Text="*Не выбрана дата рождения"
+            FontSize="15"
+            Margin="0 0 10 7"
+           Visibility="Collapsed"
+            HorizontalAlignment="Right"
+            Foreground="Red"
+            VerticalAlignment="Bottom"
+            />
+
+
+
+
+
+
+            <!--Нужно сделать подсказу!!!!! -->
+            <ComboBox
+                Grid.Row="6"
+                Grid.Column="1"
+                Style="{StaticResource RoundComboBox}"
+                Width="190"
+                Height="35"
+                VerticalAlignment="Top"
+                Margin="0 0 55 0"
+                x:Name="cb_Gender"
+                FontSize="22"
+                
+            />
+            
+           
+
+
+          
+
+
+            <PasswordBox
+                Grid.ColumnSpan="2"
+                Grid.Row="7"    
+                Height="35"
+                Width="416"                
+                Style="{StaticResource psStyle}"
+                Foreground="Gray"
+                x:Name="pbPasswordbox"
+                VerticalAlignment="Top"
+                LostFocus="tbPasswordbox_LostFocus"
+                PasswordChanged="tbPasswordbox_PasswordChanged"
+                Template="{StaticResource passwordbox}"
+                />
+            <TextBox
+                Grid.ColumnSpan="2"                                
+                Grid.Row="7"      
+                Width="416"
+                Height="35"
+                Style="{StaticResource tbStyle}"
+                x:Name="tbVisiblePasswordbox"
+                Foreground="Gray"
+               GotFocus="tbVisiblePasswordbox_GotFocus"
+               
+                Text="Введи пароль" TextChanged="CheckErrors"
+                />
+
+
+            
+                    <Image Panel.ZIndex="2"  Visibility="Collapsed" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left"  x:Name="ImgShowHide" Stretch="Fill"  Width="30" 
+               MouseLeave="OnMouseLeave" PreviewMouseDown="OnPreviewMouseDown" PreviewMouseUp="OnPreviewMouseUp" Grid.Column="1"  Grid.Row="7" Margin="165,3,0,0"/>
+
+            <TextBlock
+            x:Name="tb_ER_Password"
+            Grid.Row="7"
+            Grid.ColumnSpan="2"
+            Text="*Не правильно заполнен Пароль"
+            FontSize="15"
+            Margin="0 0 0 7"
+            Visibility="Collapsed"
+            HorizontalAlignment="Center"
+            Foreground="Red"
+            VerticalAlignment="Bottom"
+            />
+
+
+
+            <PasswordBox
+                Grid.ColumnSpan="2"
+                Grid.Row="8"  
+                Height="35"
+                Width="416"                
+                Style="{StaticResource psStyle}"
+                Foreground="Gray"
+                VerticalAlignment="Top"
+                x:Name="pbPasswordbox1"
+                Visibility="Collapsed"
+                
+                LostFocus="tbPasswordbox1_LostFocus"
+                PasswordChanged="tbPasswordbox1_PasswordChanged"
+                Template="{StaticResource passwordbox}"
+                />
+            <TextBox
+                Grid.ColumnSpan="2"                                
+                Grid.Row="8"      
+                Width="416"
+                Height="35"
+                Visibility="Collapsed"
+                Style="{StaticResource tbStyle}"
+                x:Name="tbVisiblePasswordbox1"
+                Foreground="Gray"
+                GotFocus="tbVisiblePasswordbox1_GotFocus"
+               
+                Text="Повтори пароль"
+                />
+
+            <TextBlock
+            x:Name="tb_ER_PasswordRepeat"
+            Grid.Row="8"
+            Grid.ColumnSpan="2"
+            Text="*Пароли не совпадают"
+            FontSize="15"
+            Margin="0 0 0 7"
+            Visibility="Collapsed"
+            HorizontalAlignment="Center"
+            Foreground="Red"
+            VerticalAlignment="Bottom"
+            />
+
+            <Button
+                Grid.Row="0"
+                HorizontalAlignment="Left"
+                Height="30"
+                VerticalAlignment="Center"
+                Width="30"
+                Margin="15 0 0 0"
+                Foreground="White"
+                Background="White"
+                BorderBrush="White"
+                x:Name="bt_Back"
+                Click="bt_Back_Click"
+                Style="{StaticResource ButtonStyle}"
+                >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="\Res\Images\btnBack.png"/>
+                </StackPanel>
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Button.Resources>
+               
+            </Button>
+
+            <Button
+                Grid.Row="9"
+                Height="40"
+                Width="205"
+                Style="{StaticResource ButtonStyle}"
+                HorizontalAlignment="Center"
+                Grid.ColumnSpan="2"
+                Content="Зарегистрироваться"
+                FontSize="20"
+                Margin="0 5 0 0"
+                VerticalAlignment="Top"
+                x:Name="bt_Registration"
+                Click="bt_Registration_Click"
+                Background="White"
+                BorderThickness="2"
+                >
+               
+            </Button>
+
+
+        </Grid>
+
+    </Grid>
+</Page>

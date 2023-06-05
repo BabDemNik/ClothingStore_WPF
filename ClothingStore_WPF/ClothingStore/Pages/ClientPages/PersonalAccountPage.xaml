@@ -1,0 +1,102 @@
+﻿<Page x:Class="ClothingStore.Pages.ClientPages.PersonalAccountPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClothingStore.Pages.ClientPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="840" d:DesignWidth="800"
+      Title="PersonalAccountPage">
+
+    <Grid Background="LightGreen">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="0 50 0 0">
+            <Border  Background="White" Height="350" Width="700" CornerRadius="20" Grid.Row="1" Grid.Column="1">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock
+                    FontSize="20"
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    
+                    >Личный кабинет</TextBlock>
+                <TextBox
+                    Grid.Row="1"
+                    IsEnabled="False"
+                    x:Name="tb_FName"
+                    Width="200"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource tbStyle}"
+                    
+                    />
+
+                <TextBox
+                    Grid.Row="2"
+                    IsEnabled="False"
+                    x:Name="tb_LName"
+                    Width="200"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Style="{StaticResource tbStyle}"
+                    
+                    />
+
+                <TextBox
+                    Grid.Row="2"
+                    IsEnabled="False"
+                    x:Name="tb_Patronymic"
+                    Width="200"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Style="{StaticResource tbStyle}"
+                    
+                    />
+                <TextBox
+                    Grid.Row="3"
+                    IsEnabled="False"
+                    x:Name="tb_Phone"
+                    Width="200"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource tbStyle}"
+                    
+                    />
+
+                
+                <Button 
+                    Height="100"
+                    Width="150"
+                    Content="Выйти из аккунта"
+                    x:Name="btn_Exit"
+                    Click="btn_Exit_Click" 
+                    Grid.Column="1" 
+                    Grid.Row="4"
+                    />
+            </Grid>
+        </Border>
+        </StackPanel>
+    </Grid>
+</Page>
